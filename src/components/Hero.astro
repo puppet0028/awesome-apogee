@@ -1,42 +1,185 @@
 ---
-import Container from "./Container.astro"
+import Container from "./Container.astro";
 ---
+
 <Container>
-<div class="relative flex flex-col-reverse items-center md:flex-row" id="hero">
+  <div
+    class="relative flex flex-col-reverse items-center md:flex-row"
+    id="hero"
+  >
     <div class="row items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
-        <div class="text-left space-y-3">
-            <h1 class="text-5xl font-medium leading-none md:text-6xl">Navigating the <br> digital landscape <br> for success</h1>
-            <p class="mt-6 mb-8  text-xl font-normal leading-7 sm:mb-12">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
-            <a class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex" rel="noopener noreferrer"  href="https://github.com/manulthanura/Positivus" target="_blank">
-                <h2 class="text-center text-xl font-normal leading-7">Book a consultation</h2>
+      <div class="text-left space-y-3">
+        <h1 class="text-5xl font-medium leading-none md:text-6xl">
+          What is (Meme Coin)
+        </h1>
+        <p class="mt-6 mb-8 text-xl font-normal leading-7 sm:mb-12">
+          Description of meme coin goes here
+        </p>
+        <div class="list-none flex flex-row gap-8 items-center">
+            <a
+              class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"
+              rel="noopener noreferrer"
+              href="https://github.com/manulthanura/Positivus"
+              target="_blank"
+            >
+              <h2 class="text-center text-xl font-normal leading-7">Buy Now (link to Raydium)</h2>
             </a>
+          <li>
+            <a href="">
+              <img src="telegram.svg" style="height:40px;" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="twitter-x.svg" style="height:40px;" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="dextools.svg" style="height:40px;" alt="" />
+            </a>
+          </li>
         </div>
+      </div>
     </div>
     <div class="flex items-center py-5 md:w-6/12 md:pb-20 md:pt-10">
-        <img src="/Hero.svg" width="100%" alt="Hero"/>
+      <img src="/Hero.svg" width="100%" alt="Hero" />
     </div>
-</div>
+  </div>
 
-<div class="flex-row items-center">
-    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/01.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/02.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/03.svg" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/04.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/05.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-        <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
-            <img src="./clients/06.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
-        </div>
-    </div>
-</div>
+  <div class="flex flex-row justify-center items-center">
+    <style>
+      .tooltip {
+        visibility: hidden;
+        width: 140px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -70px;
+      }
+
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const copyButton = document.getElementById("copyButton");
+        copyButton?.addEventListener("click", function () {
+          const copyTextElement = document.getElementById("copyText");
+          const tooltip = document.getElementById("myTooltip");
+          if (copyTextElement) {
+            // Extract only the part after "CA: "
+            const fullText = copyTextElement.innerText;
+            const textToCopy = fullText.split("CA: ")[1].trim();
+            navigator.clipboard
+              .writeText(textToCopy)
+              .then(() => {
+                if (tooltip) {
+                  tooltip.style.visibility = "visible";
+                  setTimeout(() => {
+                    tooltip.style.visibility = "hidden";
+                  }, 2000); // Hide tooltip after 2 seconds
+                }
+              })
+              .catch((err) => {
+                console.error("Failed to copy text: ", err);
+              });
+          } else {
+            console.error("Copy text element not found");
+          }
+        });
+      });
+    </script>
+
+    <Container>
+      <button
+        id="copyButton"
+        class="px-9 py-5 bg-zinc-900 hover:bg-white text-white hover:text-black border rounded-2xl justify-items-center md:justify-items-start gap-2.5 inline-flex"
+        style="position: relative;"
+      >
+        <h2 id="copyText" class="text-center text-2xl font-normal leading-7">
+          CA: (token contract address)
+        </h2>
+        <span class="tooltip my-2" id="myTooltip"
+          >Address copied to clipboard!</span
+        >
+      </button>
+    </Container>
+
+    <!-- <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6">
+      <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+        <img
+          src="./clients/01.svg"
+          class="h-12 w-auto mx-auto"
+          loading="lazy"
+          alt="client logo"
+          width=""
+          height=""
+        />
+      </div>
+      <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+        <img
+          src="./clients/02.svg"
+          class="h-12 w-auto mx-auto"
+          loading="lazy"
+          alt="client logo"
+          width=""
+          height=""
+        />
+      </div>
+      <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+        <img
+          src="./clients/03.svg"
+          class="h-9 w-auto m-auto"
+          loading="lazy"
+          alt="client logo"
+          width=""
+          height=""
+        />
+      </div>
+      <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+        <img
+          src="./clients/04.svg"
+          class="h-12 w-auto mx-auto"
+          loading="lazy"
+          alt="client logo"
+          width=""
+          height=""
+        />
+      </div>
+      <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+        <img
+          src="./clients/05.svg"
+          class="h-8 w-auto m-auto"
+          loading="lazy"
+          alt="client logo"
+          width=""
+          height=""
+        />
+      </div>
+      <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+        <img
+          src="./clients/06.svg"
+          class="h-12 w-auto mx-auto"
+          loading="lazy"
+          alt="client logo"
+          width=""
+          height=""
+        />
+      </div> -->
+  </div>
 </Container>

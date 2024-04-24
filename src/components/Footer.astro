@@ -1,24 +1,54 @@
 ---
-import Container from "./Container.astro"
+import Container from "./Container.astro";
 ---
+
 <footer class="bg-lime bg-fixed bg-bottom text-black">
-    <Container>
+  <Container>
     <div class="py-6">
-        <div class="flex flex-col items-center justify-between md:flex-row">
-            <div class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img class="w-auto" src="/Logo.svg" alt="Logo">
-            </div>
-            <div class="flex mt-4 md:m-0">
-                <div class="-mx-4">
-                    @ <span id="currentYear"></span> Positivus | Made with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="underline">Astro</a></div>
-                </div>
-            </div>
+      <div class="flex flex-col items-center justify-between md:flex-row">
+        <div class="flex items-center space-x-3 rtl:space-x-reverse">
+          <h1 class="text-4xl font-medium">(Meme Coin)</h1>
         </div>
+        <div class="list-none flex flex-row gap-8">
+            <li>
+              <a href="">
+                <img
+                  src="telegram.svg"
+                  style="height:40px;"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="twitter-x.svg"
+                  style="height:40px;"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="dextools.svg"
+                  style="height:40px;"
+                  alt=""
+                />
+              </a>
+            </li>
+        </div>
+        <div class="flex mt-4 md:m-0">
+          <div class="-mx-4">
+            @ <span id="currentYear"></span> (Meme Coin)
+          </div>
+        </div>
+      </div>
     </div>
-    </Container>
+  </Container>
 </footer>
 
 <script is:inline>
-    const year = new Date().getFullYear();
-    document.getElementById("currentYear").innerHTML = `${year}`;
+  const year = new Date().getFullYear();
+  document.getElementById("currentYear").innerHTML = `${year}`;
 </script>
